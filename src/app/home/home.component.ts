@@ -10,7 +10,7 @@ import { Food } from '../shared/models/Food';
 })
 export class HomeComponent implements OnInit {
   foods: Food[] = [];
-
+  
   constructor(
     private foodService: FoodService,
     activatedRoute: ActivatedRoute,
