@@ -9,8 +9,8 @@ import { Food } from '../shared/models/Food';
 })
 export class CartService {
   private cart: Cart = this.getCartFromLocalStorage();
-  privatecartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
-  cartSubject: any;
+  private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
+  
 
   constructor() {}
 
@@ -65,6 +65,6 @@ export class CartService {
 
   private getCartFromLocalStorage(): Cart {
     const cartJson = localStorage.getItem('Cart');
-    return cartJson ? JSON.parse(cartJson) : new Cart();
+    return cartJson ? JSON.parse(cartJson): new Cart();
   }
 }
